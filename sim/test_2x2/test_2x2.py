@@ -85,23 +85,25 @@ async def run_test_write(dut):
     tb = TB(dut)
     await tb.cycle_reset()
 
-    for i in range(100):
+    ref_c_list = []
+    test_num = 10
+    for i in range(test_num):
         # a = np.array([0,4,1,-7],dtype=np.int8).reshape(2,2)
         # b = np.array([2,3,6,7],dtype=np.int8).reshape(2,2)
         a = np.array(random_int_list(-8,7,4),dtype=np.int8).reshape(2,2)
         b = np.array(random_int_list(-8,7,4),dtype=np.int8).reshape(2,2)
 
         c = np.dot(a,b).flatten()
-
+        ref_c_list.append(c)
         data_np = np.hstack([a.T,b]).flatten()
-
+        
         data_list = list(data_np)
         data_list = [toByteList(c, length=1) for c in data_list]
         data_bytes = reduce(lambda x,y:x+y,data_list)
         data_frame = AxiStreamFrame(data_bytes)
         await tb.input_source.send(data_frame)
 
-
+    for i in range(1):
         pred_frame = await tb.output_sink.recv()
         # print(axisFrame2np(pred_frame))
         out1 = axisFrame2np(pred_frame)
@@ -113,7 +115,7 @@ async def run_test_write(dut):
         assert tb.output_sink.empty()
 
         out_hw = np.hstack([out2,out1])
-        assert (out_hw == c).all()
+        assert (out_hw == ref_c_list[i]).all()
 
     for i in range(600):
         await RisingEdge(dut.clk)

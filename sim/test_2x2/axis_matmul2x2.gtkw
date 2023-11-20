@@ -1,19 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Mon Nov 20 02:39:23 2023
+[*] Mon Nov 20 03:00:24 2023
 [*]
-[dumpfile] "/home/anne/work/1_IC/1_Cocotb/cocobt-matmul/sim/test_2x2/axis_matmul2x2.fst"
-[dumpfile_mtime] "Mon Nov 20 02:39:09 2023"
-[dumpfile_size] 9734
-[savefile] "/home/anne/work/1_IC/1_Cocotb/cocobt-matmul/sim/test_2x2/axis_matmul2x2.gtkw"
-[timestart] 27100
-[size] 1000 600
-[pos] 32914 33028
-*-15.814809 131700 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile] "/home/anne/work/1_IC/1_Cocotb/cocotb-matmulPE/sim/test_2x2/axis_matmul2x2.fst"
+[dumpfile_mtime] "Mon Nov 20 02:57:55 2023"
+[dumpfile_size] 10209
+[savefile] "/home/anne/work/1_IC/1_Cocotb/cocotb-matmulPE/sim/test_2x2/axis_matmul2x2.gtkw"
+[timestart] 0
+[size] 1908 832
+[pos] 39561 32809
+*-16.814808 599400 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 214
 [signals_width] 174
 [sst_expanded] 1
-[sst_vpaned_height] 152
+[sst_vpaned_height] 235
 @28
 axis_matmul2x2.clk
 axis_matmul2x2.rst
